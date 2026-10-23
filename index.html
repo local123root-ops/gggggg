@@ -2,17 +2,15 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>تحدي القص والميزان</title>
-<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
 <style>
-:root{--bg1:#ffe9c9;--bg2:#ffc4dc;--card:rgba(255,255,255,.72);--bd:rgba(255,255,255,.9);--tx:#2a1a3d;--mut:#7b6a8f;--ac:#ff6b2c;--acd:#c2410c;--ac2:#ffd43b;--good:#2fbf71;--glow:rgba(255,107,44,.45);--board1:#f3c98b;--board2:#d9a05b;--shadow:rgba(60,20,90,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1a1040;--bg2:#4a1d6e;--card:rgba(255,255,255,.08);--bd:rgba(255,255,255,.16);--tx:#f7f0ff;--mut:#b9a8d6;--glow:rgba(255,160,60,.5);--board1:#7a4b2a;--board2:#4e2e19;--shadow:rgba(0,0,0,.45)}}
-:root[data-theme="dark"]{--bg1:#1a1040;--bg2:#4a1d6e;--card:rgba(255,255,255,.08);--bd:rgba(255,255,255,.16);--tx:#f7f0ff;--mut:#b9a8d6;--glow:rgba(255,160,60,.5);--board1:#7a4b2a;--board2:#4e2e19;--shadow:rgba(0,0,0,.45)}
+:root{--bg1:#dff6ff;--bg2:#e9d5ff;--card:rgba(255,255,255,.72);--bd:rgba(255,255,255,.9);--tx:#2a1a3d;--mut:#7b6a8f;--ac:#7c3aed;--acd:#5b21b6;--ac2:#22d3ee;--good:#2fbf71;--glow:rgba(124,58,237,.4);--board1:#f3c98b;--board2:#d9a05b;--shadow:rgba(60,20,90,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1a1040;--bg2:#4a1d6e;--card:rgba(255,255,255,.08);--bd:rgba(255,255,255,.16);--tx:#f7f0ff;--mut:#b9a8d6;--glow:rgba(167,139,250,.5);--board1:#7a4b2a;--board2:#4e2e19;--shadow:rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{--bg1:#1a1040;--bg2:#4a1d6e;--card:rgba(255,255,255,.08);--bd:rgba(255,255,255,.16);--tx:#f7f0ff;--mut:#b9a8d6;--glow:rgba(167,139,250,.5);--board1:#7a4b2a;--board2:#4e2e19;--shadow:rgba(0,0,0,.45)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;min-height:100vh;color:var(--tx);font-family:"Cairo",system-ui,"Segoe UI",Tahoma,Arial,sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;display:flex;justify-content:center;overflow-x:hidden}
+body{margin:0;min-height:100vh;color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;display:flex;justify-content:center;overflow-x:hidden}
 .bg{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 .bg span{position:absolute;font-size:38px;opacity:.16;animation:fl 14s linear infinite}
 @keyframes fl{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-20vh) rotate(360deg)}}
@@ -25,7 +23,7 @@ body{margin:0;min-height:100vh;color:var(--tx);font-family:"Cairo",system-ui,"Se
 .pc input{flex:1;min-width:0;font:inherit;font-weight:800;font-size:17px;padding:8px;border-radius:10px;border:0;background:transparent;color:var(--tx);text-align:center;outline:2px solid transparent}
 .pc input:focus{outline-color:var(--ac)}
 .vs{font-weight:900;font-size:20px;color:var(--ac);margin:-2px 0}
-button{font:inherit;font-weight:900;font-size:18px;color:#fff;border:0;border-radius:16px;padding:13px 34px;cursor:pointer;margin:8px;background:linear-gradient(180deg,#ffb347,var(--ac));box-shadow:0 5px 0 var(--acd),0 10px 22px var(--glow);text-shadow:0 2px 0 rgba(0,0,0,.2);transition:transform .08s,box-shadow .08s}
+button{font:inherit;font-weight:900;font-size:18px;color:#fff;border:0;border-radius:16px;padding:13px 34px;cursor:pointer;margin:8px;background:linear-gradient(180deg,#a78bfa,var(--ac));box-shadow:0 5px 0 var(--acd),0 10px 22px var(--glow);text-shadow:0 2px 0 rgba(0,0,0,.2);transition:transform .08s,box-shadow .08s}
 button:active{transform:translateY(4px);box-shadow:0 1px 0 var(--acd),0 4px 10px var(--glow)}
 button:disabled{opacity:.5}
 .hide{display:none!important}
@@ -41,7 +39,7 @@ button:disabled{opacity:.5}
 #pips i.d{background:var(--good)}#pips i.c{background:var(--ac);box-shadow:0 0 10px var(--ac)}
 #turn{font-size:20px;margin:2px 0}#turn b{color:var(--ac)}
 .board{position:relative;margin:8px auto;width:100%;max-width:320px;padding:18px 0 14px;border-radius:26px;background:radial-gradient(circle at 50% 45%,var(--board1),var(--board2));border:3px solid rgba(255,255,255,.25);box-shadow:inset 0 0 40px rgba(0,0,0,.25),0 14px 30px var(--shadow)}
-.tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#ffe066,var(--ac2));color:#4a2c00;font-weight:900;padding:2px 18px;border-radius:20px;box-shadow:0 3px 0 #c99700;white-space:nowrap}
+.tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(180deg,#67e8f9,var(--ac2));color:#083344;font-weight:900;padding:2px 18px;border-radius:20px;box-shadow:0 3px 0 #0e7490;white-space:nowrap}
 #fruit{position:relative;width:260px;height:240px;margin:0 auto;touch-action:none;cursor:crosshair;user-select:none;direction:ltr;filter:drop-shadow(0 12px 10px rgba(0,0,0,.35))}
 .h{position:absolute;inset:0;width:100%;height:100%;transition:transform .5s cubic-bezier(.2,1.5,.4,1)}
 #trail{filter:drop-shadow(0 0 6px #fff) drop-shadow(0 0 10px var(--ac))}
@@ -51,12 +49,12 @@ button:disabled{opacity:.5}
 .pt{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--ac2);pointer-events:none;animation:pt .7s ease-out forwards}
 @keyframes pt{to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
 .scale{direction:ltr;position:relative;height:178px;margin-top:10px}
-.beam{position:absolute;top:34px;left:12%;width:76%;height:10px;border-radius:5px;background:linear-gradient(180deg,#ffe066,#e0a800);box-shadow:0 3px 8px var(--shadow);transform:rotate(var(--a,0deg));transition:transform 1.3s cubic-bezier(.3,1.7,.5,1)}
+.beam{position:absolute;top:34px;left:12%;width:76%;height:10px;border-radius:5px;background:linear-gradient(180deg,#e2e8f0,#94a3b8);box-shadow:0 3px 8px var(--shadow);transform:rotate(var(--a,0deg));transition:transform 1.3s cubic-bezier(.3,1.7,.5,1)}
 .pan{position:absolute;top:10px;width:104px;margin-left:-52px;padding:10px 0 12px;border-radius:0 0 54px 54px;background:linear-gradient(180deg,var(--card),rgba(255,255,255,.25));border:2px solid var(--ac2);font-weight:900;font-size:18px;box-shadow:0 8px 16px var(--shadow);transform:rotate(calc(var(--a,0deg)*-1));transform-origin:50% -6px;transition:transform 1.3s cubic-bezier(.3,1.7,.5,1)}
 .pan.l{left:0}.pan.r{left:100%}
-.pole{position:absolute;left:50%;top:36px;width:10px;height:116px;margin-left:-5px;background:linear-gradient(90deg,#e0a800,#ffe066,#e0a800);border-radius:5px}
-.pole::before{content:"";position:absolute;top:-4px;left:-5px;width:20px;height:20px;border-radius:50%;background:var(--ac);border:3px solid #ffe066}
-.pole::after{content:"";position:absolute;bottom:-4px;left:-38px;width:86px;height:12px;border-radius:8px;background:linear-gradient(180deg,#ffe066,#e0a800)}
+.pole{position:absolute;left:50%;top:36px;width:10px;height:116px;margin-left:-5px;background:linear-gradient(90deg,#94a3b8,#e2e8f0,#94a3b8);border-radius:5px}
+.pole::before{content:"";position:absolute;top:-4px;left:-5px;width:20px;height:20px;border-radius:50%;background:var(--ac);border:3px solid #e2e8f0}
+.pole::after{content:"";position:absolute;bottom:-4px;left:-38px;width:86px;height:12px;border-radius:8px;background:linear-gradient(180deg,#e2e8f0,#94a3b8)}
 #res{font-weight:800;font-size:17px;min-height:30px;animation:pop .5s}
 #res b{color:var(--ac);font-size:22px}
 .stars{font-size:34px;letter-spacing:4px;filter:drop-shadow(0 3px 0 var(--shadow))}.stars .dim{opacity:.2;filter:grayscale(1)}
@@ -64,6 +62,18 @@ button:disabled{opacity:.5}
 .win{font-size:64px;animation:pop .7s}
 .cf{position:fixed;top:-30px;font-size:26px;pointer-events:none;animation:cf 3.5s linear forwards;z-index:5}
 @keyframes cf{to{transform:translateY(110vh) rotate(540deg)}}
+
+.scale{height:236px}.pole{height:170px;top:38px}
+.beam{height:12px;top:30px;background:linear-gradient(180deg,#f1f5f9,#94a3b8 55%,#64748b)}
+.pan{top:6px;padding:40px 0 10px;width:112px;margin-left:-56px;border-radius:0 0 56px 56px;display:flex;flex-direction:column;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(203,213,225,.55));border:2px solid #cbd5e1;color:#1e293b}
+.pan::before{content:"";position:absolute;left:50%;top:-6px;width:84px;height:44px;margin-left:-42px;background:#94a3b8;clip-path:polygon(50% 0,0 100%,2px 100%,50% 5px,calc(100% - 2px) 100%,100% 100%)}
+.pan em{font-style:normal;font-size:34px;line-height:1}.pan span{font-size:16px}
+#res{background:#0f172a;color:#e0f2fe;border-radius:16px;padding:10px 14px;margin:6px 0;border:1.5px solid rgba(34,211,238,.35);box-shadow:inset 0 0 18px rgba(34,211,238,.25),0 6px 16px var(--shadow)}
+#res b{color:#22d3ee}
+.meter{position:relative;height:10px;border-radius:6px;margin:12px 4px 4px;background:linear-gradient(90deg,#ef4444,#facc15 35%,#22c55e 50%,#facc15 65%,#ef4444)}
+.meter i{position:absolute;top:-4px;width:6px;height:18px;margin-left:-3px;border-radius:3px;background:#fff;box-shadow:0 0 0 2px #0f172a;transition:left 1.3s cubic-bezier(.3,1.7,.5,1)}
+.bn{position:fixed;left:50%;top:38%;z-index:9;font-weight:900;font-size:28px;padding:16px 26px;border-radius:24px;background:var(--card);border:2px solid var(--ac);box-shadow:0 20px 50px var(--shadow);backdrop-filter:blur(12px);pointer-events:none;white-space:nowrap;animation:bn 2.2s forwards}
+@keyframes bn{0%{transform:translate(-50%,-50%) scale(.4);opacity:0}15%{transform:translate(-50%,-50%) scale(1.05);opacity:1}80%{opacity:1}100%{transform:translate(-50%,-50%);opacity:0}}
 </style>
 </head>
 <body>
@@ -98,19 +108,20 @@ button:disabled{opacity:.5}
 <p id="hint"></p>
 <div id="scaleBox" class="hide">
 <div class="scale"><div class="pole"></div>
-<div class="beam" id="beam"><div class="pan l" id="pl">0</div><div class="pan r" id="pr">0</div></div></div>
+<div class="beam" id="beam"><div class="pan l"><em id="pe1"></em><span id="pl">0</span></div><div class="pan r"><em id="pe2"></em><span id="pr">0</span></div></div></div>
 <div id="res"></div>
-<button id="next">التالي</button>
+
 </div>
 </div>
 </div>
 
 <script>
-const ITEMS=[["🍉","بطيخة",1500],["🍎","تفاحة",190],["🥒","خيارة",200],["🍊","برتقالة",230],["🍌","موزة",150],["🥕","جزرة",110],["🍆","باذنجانة",280],["🍅","بندورة",160],["🥔","بطاطا",220],["🍍","أناناس",1100]];
-const ROUNDS=3,W=260,H=240,HINT="🔪 اسحب إصبعك على الفاكهة بأي اتجاه أو شكل لتقصها";
+const ITEMS=[["🥕","جزرة",110],["🥒","خيارة",200],["🍆","باذنجانة",280],["🍅","بندورة",160],["🥔","بطاطا",220],["🌽","ذرة",250],["🥦","بروكلي",300],["🧅","بصلة",150],["🐢","سلحفاة",1200],["🐰","أرنب",2000],["🐱","قطة",4000],["🐧","بطريق",3500],["🐸","ضفدع",250],["🐟","سمكة",800],["🦆","بطة",1500],["🐘","فيل صغير",9000]];
+const STAGEN=["🥕 مرحلة الخضروات","🐾 مرحلة الحيوانات"];
+const ROUNDS=6,PER=3,W=260,H=240,HINT="🔪 اسحب إصبعك على الفاكهة بأي اتجاه أو شكل لتقصها";
 const PID="tqm-cutbal-",$=id=>document.getElementById(id);
 let names=[],tot=[0,0],p=0,r=0,cutDone=false,fruit,pts=[],drawing=false;
-let mode="local",me=0,peer=null,conn=null,over=false;
+let SEQ=[],mode="local",me=0,peer=null,conn=null,over=false;
 const step=()=>r*2+p;
 const S=2,CW=W*S,CH=H*S;
 function mk(){const c=document.createElement("canvas");c.width=CW;c.height=CH;return[c,c.getContext("2d",{willReadFrequently:true})]}
@@ -139,9 +150,10 @@ function begin(){
 $("start").onclick=()=>{
   mode="local";
   names=[$("n1").value||"لاعب 1",$("n2").value||"لاعب 2"];
-  newFruit(pick());begin();
+  SEQ=mkSeq();newFruit(SEQ[0]);begin();
 };
-function pick(){const i=Math.floor(Math.random()*ITEMS.length);return{i,w:Math.round(ITEMS[i][2]*(.85+Math.random()*.3))}}
+function pick(k){const a=k<PER?0:8,i=a+Math.floor(Math.random()*8);return{i,w:Math.round(ITEMS[i][2]*(.85+Math.random()*.3))}}
+const mkSeq=()=>Array.from({length:ROUNDS},(_,k)=>pick(k));
 function newFruit(f){const it=ITEMS[f.i];fruit={i:f.i,e:it[0],n:it[1],w:f.w,c:render(it[0])}}
 function mine(){return mode=="local"||p==me}
 function show(){
@@ -149,9 +161,9 @@ function show(){
   $("s1").innerHTML="<i>🦊</i><span>"+names[0]+"</span><b>"+tot[0]+"<small>غ</small></b>";
   $("s2").innerHTML="<i>🐼</i><span>"+names[1]+"</span><b>"+tot[1]+"<small>غ</small></b>";
   $("s1").className=p==0?"on":"";$("s2").className=p==1?"on":"";
-  $("turn").innerHTML="دور <b>"+names[p]+"</b>";$("fname").textContent=fruit.n+" "+fruit.e;$("rnd").textContent="الجولة "+(r+1)+" / "+ROUNDS;$("pips").innerHTML=Array.from({length:ROUNDS},(_,i)=>'<i class="'+(i<r?"d":i==r?"c":"")+'"></i>').join("");
+  $("turn").innerHTML="دور <b>"+names[p]+"</b>";$("fname").textContent=fruit.n+" "+fruit.e;$("rnd").textContent=STAGEN[r<PER?0:1]+" · "+(r+1)+" / "+ROUNDS;$("pips").innerHTML=Array.from({length:ROUNDS},(_,i)=>'<i class="'+(i<r?"d":i==r?"c":"")+'"></i>').join("");
   $("hint").classList.remove("hide");$("hint").style.color="";$("hint").textContent=mine()?HINT:"⏳ انتظر، "+names[p]+" يقص الآن...";
-  paint($("L"),fruit.c);paint($("R"),null);
+  if(p==0&&(r==0||r==PER))banner(STAGEN[r<PER?0:1]);$("pe1").textContent=$("pe2").textContent=fruit.e;paint($("L"),fruit.c);paint($("R"),null);
   for(const k of ["L","R"])$(k).style.transform="";
   $("R").style.visibility="hidden";
   $("pth").setAttribute("points","");
@@ -214,48 +226,45 @@ function doCut(P,rem){
   setTimeout(()=>{
     $("scaleBox").classList.remove("hide");
     $("pl").textContent=l+" غ";$("pr").textContent=rr+" غ";
-    {const st=df<=fruit.w*.02?3:df<=fruit.w*.08?2:1;$("res").innerHTML='<div class="stars">'+"⭐".repeat(st)+'<span class="dim">'+"⭐".repeat(3-st)+'</span></div>الفرق <b>'+df+'</b> غرام — '+["😅 جرّب مرة ثانية","👍 حلو!","🎯 ممتاز!"][st-1];$("res").style.animation="none";void $("res").offsetWidth;$("res").style.animation=""}
+    {const st=df<=fruit.w*.02?3:df<=fruit.w*.08?2:1;$("res").innerHTML='<div class="stars">'+"⭐".repeat(st)+'<span class="dim">'+"⭐".repeat(3-st)+'</span></div>الفرق <b>'+df+'</b> غرام — '+["😅 جرّب مرة ثانية","👍 حلو!","🎯 ممتاز!"][st-1]+'<div class="meter"><i style="left:50%"></i></div>';requestAnimationFrame(()=>requestAnimationFrame(()=>{$("res").querySelector(".meter i").style.left=(50+Math.max(-48,Math.min(48,(rr-l)/fruit.w*250)))+"%"}));$("res").style.animation="none";void $("res").offsetWidth;$("res").style.animation=""}
     requestAnimationFrame(()=>$("beam").style.setProperty("--a",Math.max(-18,Math.min(18,(rr-l)/fruit.w*60))+"deg"));
-    $("next").textContent=(r==ROUNDS-1&&p==1)?"النتيجة النهائية":"التالي";
+    const sx=step();setTimeout(()=>{if(step()==sx)advance()},3300);
   },700);
 }
 
 /* ---------- الانتقال للدور التالي ---------- */
-function advance(f){
-  if(p==0){p=1}else{p=0;r++;if(r>=ROUNDS)return end();newFruit(f)}
+function advance(){
+  if(p==0){p=1}else{p=0;r++;if(r>=ROUNDS)return end();newFruit(SEQ[r])}
   show();
 }
-function hostAdvance(){ // المضيف هو من يقرر الفاكهة الجديدة
-  const f=p==1?pick():null;
-  if(conn)conn.send({t:"adv",s:step(),f});
-  advance(f);
-}
-$("next").onclick=()=>{
-  if(mode=="local")return advance(p==1?pick():null);
-  if(me==0)hostAdvance();else conn.send({t:"nreq",s:step()});
-};
 
 /* ---------- الأونلاين (PeerJS) ---------- */
 const st=t=>$("st").textContent=t;
+const NOPEER="⚠️ تعذّر تحميل مكتبة الأونلاين. تحقق من الاتصال وحاول مرة ثانية، أو العبا على نفس الجهاز";
+/* تحميل PeerJS عند الحاجة فقط، حتى لا تتأخر الصفحة لو الـ CDN بطيء أو محجوب */
+const PEER_SRCS=["https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js","https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"];
+function loadScript(u){return new Promise(res=>{const s=document.createElement("script");const t=setTimeout(()=>{s.remove();res(false)},8000);s.onload=()=>{clearTimeout(t);res(true)};s.onerror=()=>{clearTimeout(t);s.remove();res(false)};s.src=u;document.head.appendChild(s)})}
+async function loadPeer(){if(typeof Peer!=="undefined")return true;for(const u of PEER_SRCS){if(await loadScript(u)&&typeof Peer!=="undefined")return true}return false}
 const rcode=()=>{const a="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";let s="";for(let i=0;i<4;i++)s+=a[Math.floor(Math.random()*a.length)];return s};
 function hookConn(c){
   conn=c;
-  c.on("open",()=>c.send({t:"hi",n:$("myn").value||"لاعب"}));
+  const tm=setTimeout(()=>{if(!c.open){st("⚠️ تعذّر الاتصال المباشر بين الجهازين، غالباً بسبب الشبكة. جرّبا نفس شبكة الواي فاي أو بدّلا الشبكة (واي فاي ↔ بيانات الجوال)");$("mk").disabled=$("jn").disabled=false}},15000);
+  c.on("open",()=>{clearTimeout(tm);c.send({t:"hi",n:$("myn").value||"لاعب"})});
   c.on("data",onMsg);
   c.on("close",()=>{if(!over){alert("انقطع الاتصال باللاعب الآخر");location.reload()}});
 }
 function onMsg(m){
   if(m.t=="hi"&&me==0){ // وصل الضيف: المضيف يبدأ الجولة
     names=[$("myn").value||"لاعب",m.n];
-    const f=pick();newFruit(f);
-    conn.send({t:"start",names,f});begin();
-  }else if(m.t=="start"){names=m.names;newFruit(m.f);begin()}
+    SEQ=mkSeq();newFruit(SEQ[0]);
+    conn.send({t:"start",names,seq:SEQ});begin();
+  }else if(m.t=="start"){names=m.names;SEQ=m.seq;newFruit(SEQ[0]);begin()}
   else if(m.t=="cut"&&m.s==step()&&!cutDone)doCut(m.pts,{l:m.l});
-  else if(m.t=="nreq"&&me==0&&m.s==step())hostAdvance();
-  else if(m.t=="adv"&&m.s==step())advance(m.f);
 }
-$("mk").onclick=()=>{
-  mode="net";me=0;$("mk").disabled=$("jn").disabled=true;st("جاري إنشاء الغرفة...");
+$("mk").onclick=async()=>{
+  $("mk").disabled=$("jn").disabled=true;st("جاري التحميل...");
+  if(!await loadPeer()){$("mk").disabled=$("jn").disabled=false;return st(NOPEER)}
+  mode="net";me=0;st("جاري إنشاء الغرفة...");
   const make=()=>{
     const code=rcode();peer=new Peer(PID+code);
     peer.on("open",()=>{$("codeShow").textContent=code;$("wait").classList.remove("hide");st("")});
@@ -263,10 +272,12 @@ $("mk").onclick=()=>{
     peer.on("error",e=>{if(e.type=="unavailable-id")make();else{st("تعذّر الاتصال بالسيرفر، حاول مرة ثانية");$("mk").disabled=$("jn").disabled=false}});
   };make();
 };
-$("jn").onclick=()=>{
+$("jn").onclick=async()=>{
   const code=($("rc").value||"").trim().toUpperCase();
   if(code.length!=4)return st("اكتب رمز الغرفة (4 خانات)");
-  mode="net";me=1;$("mk").disabled=$("jn").disabled=true;st("جاري الاتصال...");
+  $("mk").disabled=$("jn").disabled=true;st("جاري التحميل...");
+  if(!await loadPeer()){$("mk").disabled=$("jn").disabled=false;return st(NOPEER)}
+  mode="net";me=1;st("جاري الاتصال...");
   peer=new Peer();
   peer.on("open",()=>hookConn(peer.connect(PID+code,{reliable:true})));
   peer.on("error",e=>{st(e.type=="peer-unavailable"?"الغرفة غير موجودة، تأكد من الرمز":"تعذّر الاتصال، حاول مرة ثانية");$("mk").disabled=$("jn").disabled=false});
@@ -275,6 +286,7 @@ $("jn").onclick=()=>{
 /* ---------- المؤثرات والنهاية ---------- */
 function burst(x,y){for(let i=0;i<14;i++){const e=document.createElement("i");e.className="pt";e.style.left=x+"px";e.style.top=y+"px";const a=Math.random()*6.28,d=40+Math.random()*60;e.style.setProperty("--dx",Math.cos(a)*d+"px");e.style.setProperty("--dy",Math.sin(a)*d+"px");box.appendChild(e);setTimeout(()=>e.remove(),750)}}
 function confetti(){const E=["🎉","⭐","🍉","🍊","🍎","✨","🍌"];for(let i=0;i<36;i++){const e=document.createElement("div");e.className="cf";e.textContent=E[i%E.length];e.style.left=Math.random()*100+"vw";e.style.animationDelay=Math.random()*1.5+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),5200)}}
+function banner(t){const d=document.createElement("div");d.className="bn";d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2300)}
 function end(){
   over=true;
   const tie=tot[0]==tot[1],wi=tot[0]<tot[1]?0:1;
